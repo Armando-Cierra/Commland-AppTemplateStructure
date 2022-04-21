@@ -1,0 +1,58 @@
+@import '~@2600hz/sds-core/sds-tools';
+@import 'tokens';
+
+.sds_MenuOption {
+  @include sds-flex(flex-start, center);
+  @include sds-typeset(body);
+  background: var(--sds_menu_option_background);
+  padding: sds-spc(8) sds-spc(12);
+  min-height: 40px;
+  color: var(--sds_menu_option_text);
+  cursor: pointer;
+  transition: sds-transition(standard, interactive);
+  &:hover {
+    background: var(--sds_menu_option_hover_background);
+    .sds_Telicon {
+      color: var(--sds_menu_option_hover_icon);
+    }
+  }
+  .sds_Telicon {
+    pointer-events: none;
+    color: var(--sds_menu_option_icon);
+    margin-right: sds-spc(8);
+    transition: sds-transition(standard, interactive);
+  }
+  .sds_Avatar {
+    pointer-events: none;
+    margin-right: sds-spc(8);
+  }
+}
+
+.sds_MenuOption.sds_MenuOption_Description {
+  @include sds-flex(center, flex-start, column);
+  display: inline-flex;
+  &:hover {
+    .description {
+      color: var(--sds_menu_option_hover_description);
+    }
+  }
+  .description {
+    @include sds-typeset(mouse);
+    color: var(--sds_menu_option_description);
+    transition: sds-transition(standard, interactive);
+  }
+}
+
+.sds_MenuOption.sds_MenuOption_Disabled {
+  opacity: var(--sds_menu_option_disabled_opacity);
+  cursor: not-allowed;
+  &:hover {
+    background: var(--sds_menu_option_background);
+    .sds_Telicon {
+      color: var(--sds_menu_option_icon);
+    }
+    .description {
+      color: var(--sds_menu_option_description);
+    }
+  }
+}

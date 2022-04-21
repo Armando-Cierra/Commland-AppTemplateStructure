@@ -1,0 +1,75 @@
+.sds_Dropdown {
+  --sds_dropdown_background: var(
+    --sds_theme_control_background,
+    #{sds-color(white)}
+  );
+  --sds_dropdown_border_color: var(
+    --sds_theme_control_border,
+    #{sds-color(grey, 30)}
+  );
+  --sds_dropdown_border_radius: var(--sds_theme_border_radius, 0.5rem);
+  --sds_dropdown_border_style: solid;
+  --sds_dropdown_border_width: 1px;
+  --sds_dropdown_arrow: var(--sds_theme_icon, #{sds-color(grey, 70)});
+  --sds_dropdown_text: var(--sds_theme_control_text, #{sds-color(grey, 100)});
+  --sds_dropdown_helptext: var(--sds_theme_text_muted, #{sds-color(grey, 70)});
+
+  --sds_dropdown_hover_background: var(
+    --sds_theme_control_hover_background,
+    #{sds-color(white)}
+  );
+  --sds_dropdown_hover_border_color: var(
+    --sds_theme_control_hover_border,
+    #{sds-color(grey)}
+  );
+  --sds_dropdown_hover_border_width: 1px;
+
+  --sds_dropdown_focus_background: var(
+    --sds_theme_control_focus_background,
+    #{sds-color(white)}
+  );
+  --sds_dropdown_focus_border_color: var(
+    --sds_theme_focus_highlight,
+    #{sds-color(blue)}
+  );
+  --sds_dropdown_focus_border_width: 2px;
+
+  --sds_dropdown_error_background: var(
+    --sds_theme_control_error_background,
+    #{sds-color(red, 05)}
+  );
+  --sds_dropdown_error_border_color: var(
+    --sds_theme_control_error_border,
+    #{sds-color(red)}
+  );
+  --sds_dropdown_error_border_width: 2px;
+  --sds_dropdown_error_icon: var(
+    --sds_theme_control_error_icon,
+    #{sds-color(red)}
+  );
+  --sds_dropdown_error_text: var(
+    --sds_theme_control_error_text,
+    #{sds-color(red, 60)}
+  );
+  --sds_dropdown_error_helptext: var(
+    --sds_theme_control_error_text,
+    #{sds-color(red, 60)}
+  );
+
+  --sds_dropdown_disabled_background: var(
+    --sds_theme_control_disabled_background,
+    #{sds-color(white)}
+  );
+  --sds_dropdown_disabled_border_color: var(
+    --sds_theme_control_disabled_border,
+    #{sds-color(grey, 30)}
+  );
+  --sds_dropdown_disabled_border_width: 1px;
+  --sds_dropdown_disabled_arrow: var(--sds_theme_icon, #{sds-color(grey, 70)});
+  --sds_dropdown_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+  --sds_dropdown_disabled_text: var(
+    --sds_theme_control_disabled_text,
+    #{sds-color(grey, 100)}
+  );
+  --sds_dropdown_disabled_helptext: var(--sds_dropdown_helptext);
+}
