@@ -1,0 +1,237 @@
+@import '~@2600hz/sds-core/sds-tools';
+
+.sds_Wizard{
+  width: 100%;
+  height: 100vh;
+  background: var(--sds_theme_background, #{sds-color(grey, 05)});
+  .sds_Wizard_Header{
+    width: 100%;
+    height: 56px;
+    border-bottom: 1px solid var(--sds_theme_border, #{sds-color(grey, 30)});
+    display: flex;
+    background: var(--sds_theme_background_high, #{sds-color(white)});
+    .sds_Wizard_Header_Title{
+      width: 256px;
+      height: inherit;
+      padding-left: sds-spc(8);
+      padding-right: sds-spc(16);
+      border-right: 1px solid var(--sds_theme_border, #{sds-color(grey, 30)});
+      @include sds-flex(flex-start, center);
+      .sds_Text{
+        cursor: default;
+      }
+      .sds_Button{
+        margin-right: sds-spc(8);
+      }
+    }
+    .sds_Wizard_Header_Complement{
+      width: calc(100% - 256px);
+      padding-left: sds-spc(24);
+      padding-right: sds-spc(24);
+      @include sds-flex(space-between, center);
+      .sds_Wizard_Header_Complement_LeftSide{
+        @include sds-flex(flex-start, center);
+        .sds_Button{
+          display: none;
+          margin-right: sds-spc(8);
+        }
+      }
+      .sds_Wizard_Header_Complement_RightSide{
+        @include sds-flex(flex-end,  center);
+        .sds_Wizard_Header_Complement_RightSide_CustomActions{
+          @include sds-flex(flex-end, center);
+        }
+        .sds_Wizard_Header_Complement_RightSide_CancelButton{
+          margin-left: sds-spc(8);
+        }
+      }
+      
+    }
+  }
+  .sds_Wizard_Body{
+    height: calc(100% - 56px);
+    background: var(--sds_theme_background, #{sds-color(grey, 05)});
+    display: flex;
+    position: relative;
+    transition: sds-transition(standard, interactive);
+    .sds_Wizard_Menu{
+      height: 100%;
+      width: 256px;
+      padding: sds-spc(16) sds-spc(8);
+      border-right: 1px solid var(--sds_theme_border, #{sds-color(grey, 30)});
+      background: var(--sds_theme_background_high, #{sds-color(white)});
+      overflow-y: auto;
+      overflow-x: hidden;
+      transition: sds-transition(standard, enviromental);
+      .sds_Tooltip{
+        margin-left: 20px;
+      }
+    }
+    .sds_Wizard_Menu_Collapsed{
+      width: 56px;
+      overflow: hidden;
+      transition: sds-transition(standard, interactive);
+      .sds_Wizard_Menu_Item{
+        padding: 0;
+        width: 36px;
+        @include sds-flex(center, center);
+        .sds_Wizard_Menu_Item_Index{
+          opacity: 1;
+          left: 14px;
+        }
+        .sds_Wizard_Menu_Item_FullText{
+          opacity: 0;
+        }
+        .sds_Telicon{
+          margin-right: 0;
+        }
+      }
+    }
+    .sds_Wizard_Menu_Collapsed + .sds_Wizard_Content {
+      width: calc(100% - 56px);
+      transition: sds-transition(standard, interactive);
+    }
+    .sds_Wizard_Menu_Hidden{
+      display: none;
+    }
+    .sds_Wizard_Content{
+      position: relative;
+      height: calc(100%);
+      width: calc(100% - 256px);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      transition: sds-transition(standard, enviromental);
+      .sds_Wizard_Content_Body{
+        width: 100%;
+        height: calc(100% - 56px);
+        padding: sds-spc(24);
+        padding-bottom: sds-spc(32);
+        overflow-y: auto;
+        .sds_Wizard_Content_Body_ConfirmationTitle{
+          margin-bottom: sds-spc(40);
+          @include sds-screen(sm){
+            @include sds-typeset(heading-2);
+          }
+        }
+        .sds_Wizard_Content_Body_ConfirmationStep{
+          margin-bottom: sds-spc(40);
+          .sds_Wizard_Content_Body_ConfirmationStep_TitleBox{
+            @include sds-flex(flex-start, center);
+            border-bottom: 1px solid var(--sds_theme_border, sds-color(grey, 30));
+            margin-bottom: sds-spc(16);
+            padding-bottom: sds-spc(4);
+            .sds_Wizard_Content_Body_ConfirmationStep_TitleBox_Title{
+              @include sds-typeset(body-lg, semi);
+            }
+            .sds_Button{
+              margin-left: sds-spc(8);
+            }
+          }
+        }
+      }
+      .sds_Wizard_Content_Footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 56px;
+        padding: 0 sds-spc(24);
+        background: var(--sds_theme_background_high, #{sds-color(white)});
+        border-top: 1px solid var(--sds_theme_border, #{sds-color(grey, 30)});
+        @include sds-flex(flex-end, center);
+        .sds_Button{
+          &:last-child{
+            margin-left: sds-spc(8);
+          }
+        }
+        .sds_Wizard_Content_Footer_Button_NoMargin{
+          &:last-child{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sds_Wizard.sds_Wizard_Commland{
+  position: fixed;
+  left: 0;
+  top: 56px;
+  height: calc(100vh - 112px);
+  z-index: 1100;
+}
+
+//MEDIA QUERIES
+
+@include sds-screen(md){
+  .sds_Wizard{
+    .sds_Wizard_Body{
+      .sds_Wizard_Menu{
+        position: absolute;
+        z-index: 2;
+        @include sds-shadow(2);
+      }
+      .sds_Wizard_Menu_Collapsed{
+        box-shadow: none;
+      }
+      .sds_Wizard_Menu + .sds_Wizard_Content{
+        width: calc(100% - 56px);
+      }
+      .sds_Wizard_Content{
+        margin-left: 56px;
+        width: calc(100% - 56px);
+        .sds_Wizard_Content_Body{
+          padding: sds-spc(24) sds-spc(16);
+        }
+        .sds_Wizard_Content_Footer{
+          padding: 0 sds-spc(16);
+        }
+      }
+    }
+  }
+} 
+
+@include sds-screen(sm){
+  .sds_Wizard{
+    .sds_Wizard_Header{
+      .sds_Wizard_Header_Title{
+        display: none;
+      }
+      .sds_Wizard_Header_Complement{
+        padding-left: sds-spc(16);
+        padding-right: sds-spc(16);
+        width: 100%;
+        .sds_Wizard_Header_Complement_LeftSide{
+          .sds_Button{
+            display: flex;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .sds_Wizard_Body{
+      .sds_Wizard_Menu{
+        display: none;
+      }
+      .sds_Wizard_Menu + .sds_Wizard_Content {
+        width: 100%;
+      }
+      .sds_Wizard_Content{
+        width: 100%;
+        margin-left: 0;
+        .sds_Wizard_Content_Body{
+          padding: sds-spc(16) sds-spc(16);
+        }
+        .sds_Wizard_Content_Footer{
+          @include sds-flex(center, center);
+          .sds_Button{
+            flex-shrink: 1;
+            flex-grow: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+} 
