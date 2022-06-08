@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import uniqid from 'uniqid';
 
 interface Props {
-  collapseMenu: boolean;
   index: number;
   selectedStep: number;
   blockedSteps: any[];
@@ -18,7 +17,6 @@ interface Props {
 }
 
 const WizardMenuItem = ({
-  collapseMenu,
   index,
   selectedStep,
   blockedSteps,
@@ -53,7 +51,7 @@ const WizardMenuItem = ({
             className="sds_Wizard_Menu_Item_CheckIcon"
           />
         )}
-      {index === selectedStep && !collapseMenu && (
+      {index === selectedStep && (
         <Telicon name="dot" className="sds_Wizard_Menu_Item_ActiveIcon" />
       )}
       {index === selectedStep && mobileDevice && (

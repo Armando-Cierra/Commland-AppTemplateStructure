@@ -1080,10 +1080,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@code503/sds-react-components@^1.34.10":
-  version "1.34.10"
-  resolved "https://registry.yarnpkg.com/@code503/sds-react-components/-/sds-react-components-1.34.10.tgz#f4382dfc4bc8a6ab4650336bf66aa1ae8c9419fd"
-  integrity sha512-MCJq5eBtt7QgLMIJw6H8A/WdDaPguSmGyZK3L9euvN9rvZeYgc22ZgZVov6+xM5Pabt0rk1GEm1+2ftns8fy1w==
+"@code503/sds-react-components@^1.36.11":
+  version "1.36.11"
+  resolved "https://registry.yarnpkg.com/@code503/sds-react-components/-/sds-react-components-1.36.11.tgz#be4bb70da529cec8a687b7236c8d5320c3610318"
+  integrity sha512-OSCXhW6jGC6OraB6Wuscf7HSye7+rJtTz/uiRyo4IWwbcNB/q1BWwbsvoQ1E3q0s2rj60mWtmJKX5dzkY6+ZrQ==
 
 "@csstools/normalize.css@*":
   version "12.0.0"

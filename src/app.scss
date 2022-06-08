@@ -20,6 +20,8 @@ body{
     left: 0;
     width: 100%;
     height: calc(100vh - 112px);
+    background: var(--sds_theme_background_high);
+    @include sds-flex(center, center);
   }
 }
 
@@ -33,6 +35,7 @@ body{
   position: fixed;
   top: 0;
   left: 0;
+  border-bottom: 1px solid var(--sds_theme_border);
 }
 
 .dock{
@@ -40,6 +43,7 @@ body{
   bottom: 0;
   left: 0;
   @include sds-flex(center, center);
+  border-top: 1px solid var(--sds_theme_border);
 }
 
 .Actions{

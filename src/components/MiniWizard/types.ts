@@ -1,4 +1,5 @@
 export interface Props {
+  show: boolean;
   className?: string;
   commland?: boolean;
   type?: 'Initial' | 'Edit';
@@ -6,6 +7,7 @@ export interface Props {
   title: string;
   confirmationStepTitle?: string;
   confirmationContentTitle?: string;
+  confirmationContentDescription?: string;
   confirmButton?: string;
   nextButton?: string;
   previousButton?: string;

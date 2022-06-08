@@ -1,13 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
-import { Button, Checkbox, Text } from '@2600hz/sds-react-components';
+import { MiniWizard } from './components';
 import {
-  Wizard,
+  Button,
+  Checkbox,
+  Text,
   WizardStep,
   WizardStepActions,
   WizardStepContent,
   WizardStepReview
-} from './components';
+} from '@code503/sds-react-components';
 import './app.scss';
 
 const Navbar = () => {
@@ -27,12 +29,15 @@ const Navbar = () => {
   };
 
   const [validations, setValidations] = useState({
-    stepOne: false,
-    stepTwo: false
+    stepOne: true,
+    stepTwo: true
   });
+
+  const [showModal, setShowModal] = useState(false);
 
   const cancel = () => {
     console.log('cancel');
+    setShowModal(false);
   };
 
   const confirm = () => {
@@ -43,12 +48,16 @@ const Navbar = () => {
     <>
       <section className="toolbar" />
       <main>
-        <Wizard title="Example" commland onCancel={cancel} onConfirm={confirm}>
-          <WizardStep
-            stepTitle="Step One"
-            requiresValidation
-            validation={validations.stepOne}
-          >
+        <MiniWizard
+          show={showModal}
+          title="Example"
+          commland
+          type="Edit"
+          confirmationContentDescription="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque temporibus, hic ullam, ipsum corporis quas praesentium libero culpa eum accusamus, eos facere quasi ducimus voluptatibus aperiam necessitatibus reiciendis error totam."
+          onCancel={cancel}
+          onConfirm={confirm}
+        >
+          <WizardStep stepTitle="Step One" validation={validations.stepOne}>
             <WizardStepActions type="Actions" className="Actions">
               <Button icon="download">Download</Button>
               <Button icon="mail">Send Email</Button>
@@ -93,11 +102,7 @@ const Navbar = () => {
             </WizardStepReview>
           </WizardStep>
 
-          <WizardStep
-            stepTitle="Step Three"
-            requiresValidation
-            validation={validations.stepTwo}
-          >
+          <WizardStep stepTitle="Step Three" validation={validations.stepTwo}>
             <WizardStepContent type="Content">
               <Text.p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
@@ -135,7 +140,14 @@ const Navbar = () => {
               <Text.p>Something...</Text.p>
             </WizardStepReview>
           </WizardStep>
-        </Wizard>
+        </MiniWizard>
+        <Button
+          onClick={() => {
+            setShowModal(true);
+          }}
+        >
+          Open Modal
+        </Button>
       </main>
       <section className="dock">
         <Button
@@ -153,16 +165,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-/*
-
-Wizard
-  |_WizardSetp (2)
-  | |_WizardStepActions
-  | |_WizardStepContent
-  | |_WizardStepReview
-  |
-  |_WizardStep (3)
-    |_...(And Ahead)
-
-*/
