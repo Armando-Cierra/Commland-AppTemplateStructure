@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@2600hz/sds-core": "^1.1.0",
-    "@2600hz/sds-react-components": "^1.39.1",
+    "@2600hz/sds-react-components": "^1.39.2",
     "@2600hz/sds-telicon": "^1.1.0",
     "@2600hz/sds-themes": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.1",

@@ -22,7 +22,9 @@ const Page1 = () => {
     >
       <AppPageActions type="Actions" className="page1-actions">
         <Button>Base Action</Button>
-        <Button type="Primary">Primary Action</Button>
+        <Button type="Primary" icon="apps">
+          {screenSize.dynamicWidth >= 767 ? 'Primary Action' : ''}
+        </Button>
       </AppPageActions>
       <AppPageContent className="page1-content" type="Content">
         <Text.p>

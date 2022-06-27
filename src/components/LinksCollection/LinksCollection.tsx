@@ -21,9 +21,7 @@ const LinksCollection = () => {
       {/*Section 1*/}
       <AppMenuGroup title="Section 1 Example">
         <NavLink to="/page-1">
-          <AppMenuItem notificationNumber={23} icon="apps">
-            Page 1
-          </AppMenuItem>
+          <AppMenuItem icon="apps">Page 1</AppMenuItem>
         </NavLink>
         <NavLink to="/page-2">
           <AppMenuItem>Page 2</AppMenuItem>

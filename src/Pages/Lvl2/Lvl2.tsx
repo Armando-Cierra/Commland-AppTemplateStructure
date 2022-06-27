@@ -24,7 +24,7 @@ const Lvl2 = () => {
         <Link to="/page-1/lvl-1">
           <AppPageNavNestedItem>Page 1 - Lvl 1</AppPageNavNestedItem>
         </Link>
-        <Link to="/">
+        <Link to="/page-1">
           <AppPageNavNestedItem>Page 1</AppPageNavNestedItem>
         </Link>
       </AppPageNav>
