@@ -1,0 +1,8 @@
+@import '~@2600hz/sds-core/sds-tools';
+
+.page1-actions {
+  @include sds-flex(flex-end, center);
+  .sds_Button {
+    margin-left: sds-spc(8);
+  }
+}

@@ -1,55 +1,52 @@
-import React from 'react';
-import { useState } from 'react';
-import { Button } from '@2600hz/sds-react-components';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Toolbar, Dock, LinksCollection, RoutesCollection } from 'components';
+import { useStore } from 'store';
 import './app.scss';
 
 const Navbar = () => {
-  const [theme, setTheme] = useState('Default');
+  //For this example I'm using zustand to control showMenu and screenSize states
+  const { setScreenSize } = useStore();
 
-  const changeTheme = () => {
-    setTheme((prevState) => (prevState === 'Default' ? 'Dark' : 'Default'));
-
-    const body = document.body;
-    const bodyTheme = body.getAttribute('data-theme');
-
-    if (bodyTheme === 'Default') {
-      body.setAttribute('data-theme', 'Dark');
-    } else {
-      body.setAttribute('data-theme', 'Default');
-    }
-  };
-
-  const [validations, setValidations] = useState({
-    stepOne: true,
-    stepTwo: true
+  //State and functions to detect the screen resolution and pass it to the global state
+  const [screenSizeState, setScreenSizeState] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight
   });
 
-  const [showModal, setShowModal] = useState(false);
+  const setDimension = () => {
+    setScreenSizeState({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight
+    });
 
-  const cancel = () => {
-    console.log('cancel');
-    setShowModal(false);
+    setScreenSize(window.innerWidth, window.innerHeight);
   };
 
-  const confirm = () => {
-    console.log('confirm');
-  };
+  useEffect(() => {
+    window.addEventListener('resize', setDimension);
+
+    return () => {
+      window.removeEventListener('resize', setDimension);
+    };
+  }, [screenSizeState]);
 
   return (
     <>
-      <section className="toolbar" />
-      <main></main>
-      <section className="dock">
-        <Button
-          icon={theme === 'Default' ? 'lightbulb' : 'lightbulb-slash'}
-          onClick={changeTheme}
-          type="Primary"
-        >
-          {theme === 'Default'
-            ? 'Change to Dark Theme'
-            : 'Change to Light Theme'}
-        </Button>
-      </section>
+      {/*This structure is to simulate Single-SPA final structure */}
+      <Toolbar />
+
+      <main>
+        <Router>
+          {/**This is the main div of the app itself */}
+          <div className="main">
+            <LinksCollection />
+            <RoutesCollection />
+          </div>
+        </Router>
+      </main>
+
+      <Dock />
     </>
   );
 };
