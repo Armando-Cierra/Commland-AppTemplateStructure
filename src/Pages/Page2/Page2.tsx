@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, AppPage, AppPageContent } from '@2600hz/sds-react-components';
+import { Text, AppPage, AppPageContent } from '@code503/sds-react-components';
 import { useStore } from 'store';
 
 const Page2 = () => {

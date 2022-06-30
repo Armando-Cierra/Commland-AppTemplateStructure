@@ -7,7 +7,7 @@ import {
   AppPageContent,
   AppPageNav,
   AppPageNavNestedItem
-} from '@2600hz/sds-react-components';
+} from '@code503/sds-react-components';
 import { useStore } from 'store';
 
 const Lvl2 = () => {

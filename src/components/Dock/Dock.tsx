@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from '@2600hz/sds-react-components';
+import { Button } from '@code503/sds-react-components';
 
 const Dock = () => {
   const [theme, setTheme] = useState('Dark');

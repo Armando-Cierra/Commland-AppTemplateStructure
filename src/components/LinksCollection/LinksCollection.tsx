@@ -4,7 +4,7 @@ import {
   AppMenu,
   AppMenuGroup,
   AppMenuItem
-} from '@2600hz/sds-react-components';
+} from '@code503/sds-react-components';
 import { useStore } from 'store';
 
 const LinksCollection = () => {
@@ -21,17 +21,34 @@ const LinksCollection = () => {
       {/*Section 1*/}
       <AppMenuGroup title="Section 1 Example">
         <NavLink to="/page-1">
-          <AppMenuItem icon="apps">Page 1</AppMenuItem>
+          <AppMenuItem
+            setShowMenu={setShowMenu}
+            screenWidth={screenSize.dynamicWidth}
+            icon="apps"
+            notificationNumber={25}
+          >
+            Page 1
+          </AppMenuItem>
         </NavLink>
         <NavLink to="/page-2">
-          <AppMenuItem>Page 2</AppMenuItem>
+          <AppMenuItem
+            setShowMenu={setShowMenu}
+            screenWidth={screenSize.dynamicWidth}
+          >
+            Page 2
+          </AppMenuItem>
         </NavLink>
       </AppMenuGroup>
 
       {/*Section 2*/}
       <AppMenuGroup title="Section 2 Example">
         <NavLink to="/page-3">
-          <AppMenuItem>Page 3</AppMenuItem>
+          <AppMenuItem
+            setShowMenu={setShowMenu}
+            screenWidth={screenSize.dynamicWidth}
+          >
+            Page 3
+          </AppMenuItem>
         </NavLink>
       </AppMenuGroup>
     </AppMenu>

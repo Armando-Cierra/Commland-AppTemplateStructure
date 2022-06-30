@@ -1087,6 +1087,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@code503/sds-react-components@^1.39.2":
+  version "1.39.2"
+  resolved "https://registry.yarnpkg.com/@code503/sds-react-components/-/sds-react-components-1.39.2.tgz#b0beffbd26ad4db9b7c9b443be379ebb73a6dd2e"
+  integrity sha512-Ddkd7s2wcBalvYiWZDeYuf1+UuIWzAYLlo6QE7cxPpVbqjOnoIUNiWtSo3NppQ9mMHDvKiUX4xhrd5VPwubByQ==
+
 "@csstools/normalize.css@*":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-12.0.0.tgz#a9583a75c3f150667771f30b60d9f059473e62c4"

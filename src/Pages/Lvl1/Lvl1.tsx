@@ -6,8 +6,9 @@ import {
   AppPage,
   AppPageContent,
   AppPageNav,
-  AppPageNavItem
-} from '@2600hz/sds-react-components';
+  AppPageNavItem,
+  AppPageActions
+} from '@code503/sds-react-components';
 import { useStore } from 'store';
 
 const Lvl1 = () => {
@@ -25,6 +26,9 @@ const Lvl1 = () => {
           <AppPageNavItem>Page 1</AppPageNavItem>
         </Link>
       </AppPageNav>
+      <AppPageActions type="Actions">
+        <Button>Example</Button>
+      </AppPageActions>
       <AppPageContent type="Content">
         <Text.p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus

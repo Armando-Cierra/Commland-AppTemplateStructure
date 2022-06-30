@@ -6,7 +6,7 @@ import {
   AppPage,
   AppPageActions,
   AppPageContent
-} from '@2600hz/sds-react-components';
+} from '@code503/sds-react-components';
 import { useStore } from 'store';
 import './page1.scss';
 

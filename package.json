@@ -7,6 +7,7 @@
     "@2600hz/sds-react-components": "^1.39.2",
     "@2600hz/sds-telicon": "^1.1.0",
     "@2600hz/sds-themes": "^2.0.1",
+    "@code503/sds-react-components": "^1.39.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
